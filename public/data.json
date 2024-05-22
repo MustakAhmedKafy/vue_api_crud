@@ -1,0 +1,32 @@
+{
+  "status": 200,
+  "students": [
+    {
+      "id": 1,
+      "name": "ved prakash n",
+      "course": "bca",
+      "email": "ved@gmail.com",
+      "phone": "9879879878",
+      "created_at": "2023-01-17T02:22:54.0000002",
+      "updated_at": "2023-01-17T05:04:53.0000002"
+    },
+    {
+      "id": 2,
+      "name": "Mustak Ahmed",
+      "course": "bea",
+      "email": "sail.com",
+      "phone": "9879879878",
+      "created_at": "2023-01-17T02:23:09.0000062",
+      "updated_at": "2023-01-17T02:23:09.0000002"
+    },
+    {
+      "id": 5,
+      "name": "new update",
+      "course": "BBA",
+      "email": "@gmail.com",
+      "phone": "9879879575",
+      "created_at": "2023-01-17T06:32:43.0000002",
+      "updated_at": "2023-01-17T06:33:40.0000002"
+    }
+  ]
+}
