@@ -4,14 +4,24 @@
       class="px-36 bg-gray-100 flex justify-between items-center py-2 mx-auto"
     >
       <h2 class="text-3xl">Students</h2>
-      <router-link to="/student/create">
-        <button
-          type="button"
-          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-        >
-          Add Student
-        </button>
-      </router-link>
+      <button
+        data-modal-target="crud-modal"
+        data-modal-toggle="crud-modal"
+        type="button"
+        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+      >
+        Add Student
+      </button>
+      <!-- modal -->
+      <div
+        id="crud-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+      >
+        <CrudModal />
+      </div>
+      <!-- modal end -->
     </div>
     <div class="px-36 mt-5">
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -90,6 +100,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import CrudModal from "../components/CrudModal.vue";
 import axios from "axios";
 
 const students = ref([]);
