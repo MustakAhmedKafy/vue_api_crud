@@ -3,115 +3,55 @@
     <!-- Modal content -->
     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
       <!-- Modal header -->
-      <div
-        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
-      >
+      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
           Add Student
         </h3>
-        <button
-          type="button"
+        <button type="button"
           class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-          data-modal-toggle="crud-modal"
-        >
-          <svg
-            class="w-3 h-3"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-            />
+          data-modal-toggle="crud-modal">
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
           </svg>
           <span class="sr-only">Close modal</span>
         </button>
       </div>
       <!-- Modal body -->
-      <form class="p-4 md:p-5">
+      <form @submit.prevent="handleSubmit" class="p-4 md:p-5">
         <div class="grid gap-4 mb-4 grid-cols-2">
           <div class="col-span-2">
-            <label
-              for="name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Student Name</label
-            >
-            <input
-              type="text"
-              name="name"
-              id="name"
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Student Name</label>
+            <input type="text" v-model="student.name" id="name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Student Name"
-              required=""
-            />
+              placeholder="Student Name" required />
           </div>
           <div class="col-span-2">
-            <label
-              for="name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Student Email</label
-            >
-            <input
-              type="email"
-              name="name"
-              id="name"
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Student
+              Email</label>
+            <input type="email" v-model="student.email" id="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Student Email"
-              required=""
-            />
+              placeholder="Student Email" required />
           </div>
           <div class="col-span-2 sm:col-span-1">
-            <label
-              for="price"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Course Name</label
-            >
-            <input
-              type="text"
-              name="price"
-              id="price"
+            <label for="course" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Course Name</label>
+            <input type="text" v-model="student.course" id="course"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Course Name"
-              required=""
-            />
+              placeholder="Course Name" required />
           </div>
           <div class="col-span-2 sm:col-span-1">
-            <label
-              for="category"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Phone</label
-            >
-            <input
-              type="number"
-              name="price"
-              id="price"
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
+            <input type="number" v-model="student.phone" id="phone"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Phone Number"
-              required=""
-            />
+              placeholder="Phone Number" required />
           </div>
-          
         </div>
-        <button
-          type="submit"
-          class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          <svg
-            class="me-1 -ms-1 w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
+        <button type="submit"
+          class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
               d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-              clip-rule="evenodd"
-            ></path>
+              clip-rule="evenodd"></path>
           </svg>
           Add Student
         </button>
@@ -120,6 +60,30 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const student = ref({
+  name: "",
+  email: "",
+  course: "",
+  phone: "",
+});
+
+const emit = defineEmits(["addStudent"]);
+
+const handleSubmit = () => {
+  student.value.id = Date.now(); // Assign a unique ID
+  student.value.created_at = new Date().toISOString(); // Add a created_at timestamp
+  emit("addStudent", student.value);
+  // Reset the form
+  student.value = {
+    name: "",
+    email: "",
+    course: "",
+    phone: "",
+  };
+};
+</script>
 
 <style scoped></style>
